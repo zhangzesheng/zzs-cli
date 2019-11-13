@@ -17,14 +17,14 @@ render = promisify(render);
 
 const fetchRepoList = async ()=>{
   // axios 返回promise，前后端通用
-  const { data } = await axios.get('https://api.github.com/orgs/zhu-cli/repos');
+  const { data } = await axios.get('https://api.github.com/orgs/zhangzesheng/repos');
   return data
 }
 
 // 获取版本号
 const fetchTagList = async (repo)=>{
   // axios 返回promise，前后端通用
-  const { data } = await axios.get(`https://api.github.com/repos/zhu-cli/${repo}/tags`);
+  const { data } = await axios.get(`https://api.github.com/repos/zhangzesheng/${repo}/tags`);
   return data
 }
 
@@ -39,7 +39,7 @@ const waitFnloading = (fn, message)=>async(...args)=>{
 
 const download = async (repo, tag)=>{
   // 固定写法, github 上的组织
-  let api = `zhu-cli/${repo}`;
+  let api = `zhangzesheng/${repo}`;
   if(tag){
     api+=`#${tag}`;
   }
